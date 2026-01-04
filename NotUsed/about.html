@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .skills-grid span {
+  position: relative;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 14px 16px;
+  border-radius: 14px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.skills-grid span:hover {
+  transform: translateY(-6px);
+  box-shadow: 
+    0 10px 30px rgba(56, 189, 248, 0.25),
+    0 0 20px rgba(34, 197, 94, 0.2);
+}
+.skills-grid span::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  padding: 1px;
+  background: linear-gradient(135deg, #38bdf8, #22c55e);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.skills-grid span:hover::before {
+  opacity: 1;
+}
+.skills-grid span i {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  color: var(--primary);
+}
+
+
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+}
+
+.skills-grid span {
+  background: var(--card);
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+}
+    </style>
+</head>
+<body>
+    <h2>About Me</h2>
+  <p>
+    I am currently working as an <strong>Associate Software Engineer at Accenture</strong>.
+    I have hands-on experience in Java Full Stack and MERN stack development.
+    I enjoy building scalable applications and improving system efficiency.
+  </p>
+
+  <div class="skills-grid">
+    <span>Java Full Stack</span>
+    <span>Spring Boot</span>
+    <span>React</span>
+    <span>Node.js</span>
+    <span>JavaScript</span>
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>Git</span>
+    <span>GitHub</span>
+    <span>Docker</span>
+    <span>SQL</span>
+    <span>Linux</span>
+  </div>
+</body>
+</html>

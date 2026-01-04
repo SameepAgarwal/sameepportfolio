@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .biodata-section {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 60px;
+        padding: 100px 80px;
+        background: var(--bg-light);
+        }
+
+        .my-biodata-photo {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        .biodata-heading {
+        font-size: 2.2rem;
+        margin-bottom: 16px;
+        }
+
+        .biodata-div p {
+        color: var(--text-muted);
+        margin-bottom: 30px;
+        }
+
+        .skills {
+        margin-bottom: 18px;
+        }
+
+        .skills h2 {
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+        }
+
+        .progress-bar {
+        height: 10px;
+        background: #1f2933;
+        border-radius: 999px;
+        overflow: hidden;
+        }
+
+        .progress-bar span {
+        height: 100%;
+        display: block;
+        background: linear-gradient(90deg, #38bdf8, #22c55e);
+        }
+    </style>
+</head>
+<body>
+    <div>
+            <img src="./sameep_2.jpeg" alt="Sameep" class="my-biodata-photo" />
+        </div>
+        <div class="biodata-div">
+            <h3 class="biodata-heading">My Bio-Data</h3>
+            <p> I am currently working as an <strong><u>Associate Software Engineer at Accenture</u></strong>.
+            I have hands-on experience in Java Full Stack and MERN stack development.
+            I enjoy building scalable applications and improving system efficiency.</p>
+            <div>
+                <div class="skills">
+                    <h2>C++</h2>
+                    <div class="progress-bar progress-bar-cplusplus">
+                        <span>90%</span>
+                    </div>
+                </div>
+                <div class="skills">
+                    <h2>HTML</h2>
+                    <div class="progress-bar progress-bar-html">
+                        <span>84%</span>
+                    </div>
+                </div>
+
+                <div class="skills">
+                    <h2>CSS</h2>
+                    <div class="progress-bar progress-bar-css">
+                        <span>87%</span>
+                    </div>
+                </div>
+                <div class="skills">
+                    <h2>JavaScript</h2>
+                    <div class="progress-bar progress-bar-js">
+                        <span>90%</span>
+                    </div>
+                </div>
+                <div class="skills">
+                    <h2>MERN</h2>
+                    <div class="progress-bar progress-bar-mern">
+                        <span>97%</span>
+                    </div>
+                </div>
+            </div>
+            <button class="hire-me-btn download-resume-btn"> <a
+                    href="https://drive.google.com/file/d/17Gv_0dED4ZJQxvOQ8Czn8eKGx1aHR4cG/view?usp=drive_link"
+                    target="_blank">Download
+                    Resume</a></button>
+        </div>
+</body>
+</html>

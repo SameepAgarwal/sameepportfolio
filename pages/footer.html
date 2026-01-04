@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <style>
+        /* ===== FOOTER SECTION ===== */
+        .footer-section {
+        background: linear-gradient(180deg, #020617, #020617);
+        border-top: 1px solid rgba(255,255,255,0.08);
+        padding: 60px 60px 30px;
+        color: #e5e7eb;
+        }
+
+        /* ===== FOOTER GRID ===== */
+        .footer-manager {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+        gap: 60px;
+        max-width: 1000px;
+        margin: 0 auto 40px;
+        }
+
+        /* ===== FOOTER HEADINGS ===== */
+        .footer-manager h2 {
+        font-size: 1.3rem;
+        margin-bottom: 18px;
+        position: relative;
+        }
+
+        .footer-manager h2::after {
+        content: "";
+        width: 40px;
+        height: 2px;
+        background: linear-gradient(90deg, #38bdf8, #22c55e);
+        display: block;
+        margin-top: 8px;
+        border-radius: 2px;
+        position: relative;
+        /* right: 0px; */
+        left: 46%;
+        }
+
+        /* ===== LIST ===== */
+        .footer-services-list {
+        list-style: none;
+        padding: 0;
+        }
+
+        .footer-services-list li {
+        margin-bottom: 12px;
+        }
+
+        /* ===== LINKS ===== */
+        .footer-services {
+        font-size: 0.95rem;
+        color: #9ca3af;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Hover effect */
+        .footer-services:hover {
+        color: #38bdf8;
+        transform: translateX(6px);
+        }
+
+        /* Icon style */
+        .footer-services i {
+        color: #22c55e;
+        font-size: 0.9rem;
+        }
+
+        /* ===== COPYRIGHT ===== */
+        .footer-section h4 {
+        text-align: center;
+        font-size: 0.85rem;
+        color: #6b7280;
+        margin-top: 20px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+        .footer-section {
+            padding: 50px 30px 25px;
+        }
+
+        .footer-manager {
+            grid-template-columns: 1fr;
+            gap: 40px;
+            text-align: center;
+        }
+
+        .footer-manager h2::after {
+            margin-left: auto;
+            margin-right: auto;
+            left: 0%
+        }
+
+        .footer-services {
+            justify-content: center;
+        }
+        }
+    </style>
+</head>
+<body>
+    <!-- <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="social-links">
+                <a href="https://twitter.com" target="_blank">f</a>
+                <a href="https://linkedin.com" target="_blank">in</a>
+                <a href="https://github.com" target="_blank">gh</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Your Name. All rights reserved.</p>
+            </div>
+        </div>
+    </footer> -->
+    <footer class="footer-section">
+        <div>
+            <div class="footer-manager">
+                <div>
+                    <h2>Services</h2>
+                    <ul class="footer-services-list">
+                        <li><a class="footer-services">Web Design</a></li>
+                        <li><a class="footer-services">MERN Development</a></li>
+                        <li><a class="footer-services">Software Development</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Contact Us</h2>
+                    <ul class="footer-services-list">
+                        <li><a class="footer-services"><i class="fa-solid fa-location-dot"></i> Gorakhpur, Uttar
+                                Pradesh, India</a></li>
+                        <li><a class="footer-services"><i class="fa-solid fa-phone"></i> +91 7891092135</a></li>
+                        <li><a class="footer-services"><i class="fa-regular fa-envelope"></i>
+                                sameepagarwal232@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <h4>Copyright &copy; 2023 All rights reserved | Sameep Portfolio Website</h4>
+        </div>
+    </footer>
+</body>
+</html>

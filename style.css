@@ -6,626 +6,229 @@
     box-sizing: border-box;
     font-family: "Work Sans", sans-serif;
 }
-
+/* =========================
+   GLOBAL VARIABLES & RESET
+========================= */
 :root {
-    --heading: rgb(0 10 45);
-    --para: #777;
-    --para-tint: #e4e4e4;
-    --white: #fff;
-    --black: #212529;
-    --helper: #8490ff;
-    --overlay: #3e64ff;
-    --helper-tint: #f3f4ff;
-    --bg: rgb(249 249 255);
-    --icons-bg: rgba(144, 172, 209, 0.2);
-    --gradient: linear-gradient(0deg, rgb(132 144 255) 0%, rgb(98 189 252) 100%);
-    --gradientSupport: -webkit-linear-gradient(0deg,
-            rgb(132 144 255) 0%,
-            rgb(98 189 252) 100%);
-    --shadow: 0px 0px 20px 0px rgb(132 144 255 / 20%);
-    --shadowSupport: 0px 20px 20px 0px rgb(132 144 255 / 30%);
+  --bg-dark: #0f172a; /* LIGHT Color*/
+  --bg-light: #020617; /*DARK Color* using / 
+  /* --primary: #38bdf8; */
+  /* --accent: #22c55e; */
+  /* --text-main: #e5e7eb; */
+  /* --text-muted: #9ca3af; */
+
+   --bg: #020617;
+  --card: #0f172a;
+  --primary: #38bdf8;
+  --accent: #22c55e;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
 }
 
-html {
-    font-size: 62.5%;
-    scroll-behavior: smooth;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html{
+  scroll-behavior: smooth;
 }
 
 body {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    height: 100%;
+  background: var(--bg-dark);
+  color: #e5e7eb;
+  line-height: 1.6;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-    font-family: "Poppins", sans-serif;
-}
+/* a {
+  text-decoration: none;
+  color: inherit;
+} */
 
-h1 {
-    color: var(--heading);
-    font-size: 6rem;
-    font-weight: 600;
-}
-
-h3 {
-    font-size: 5rem;
-    font-weight: 600;
-}
-
-p {
-    color: var(--para);
-    line-height: 1.6;
-    font-size: 1.7rem;
-}
-
-a {
-    text-decoration: none;
-}
-
-li {
-    list-style: none;
-}
-
+/* =========================
+   HEADER & NAVBAR
+========================= */
 header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 0rem;
-    background-color: rgb(243, 242, 242);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 60px;
 }
 
-header .logo {
-    margin: 1rem 5rem;
-    height: 6rem;
+.logo {
+  height: 50px;
+  border-radius: 50%;
+}
+.logo-text {
+  font-size: 1.6rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 
 .navbar-lists {
-    list-style: none;
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.navbar-lists {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.navbar-lists a {
+  position: relative;
+  color: var(--muted);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.navbar-lists a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  left: 0;
+  bottom: -6px;
+  transition: width 0.3s;
+}
+
+.navbar-lists a:hover {
+  color: var(--primary);
+}
+
+.navbar-lists a:hover::after {
+  width: 100%;
+}
+
+/* ===== HAMBURGER MENU ===== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 26px;
+  height: 2px;
+  /* background: #e5e7eb; */
+  border-radius: 2px;
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  header {
+    padding: 16px 30px;
+  }
+
+  /* show hamburger */
+  .menu-toggle {
     display: flex;
-    flex-direction: row;
-    gap: 3rem;
-    padding: 0rem 3rem;
+  }
+
+  /* hide navbar initially */
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(2,6,23,0.95);
+    backdrop-filter: blur(14px);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .navbar-lists {
+    flex-direction: column;
+    padding: 25px 0;
+    gap: 20px;
+    text-align: center;
+  }
+
+  /* active menu */
+  .navbar.active {
+    max-height: 400px;
+  }
+
 }
-
-.navbar-link {
-    text-decoration: none;
-    font-size: 1.9rem;
-    color: rgb(40, 39, 39);
-    font-weight: 700;
-}
-
-.navbar-link:hover {
-    color: blue;
-}
+/* =========================
+   HERO SECTION
+========================= */
 
 
-.hero-section {
-    margin: 10rem 0rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.my-name {
-    font-size: 6rem;
-    font-weight: bolder;
-}
-
+/* =========================
+   BUTTONS
+========================= */
 .hire-me-btn {
-    background: linear-gradient(to right, rgb(82, 108, 156), rgb(0, 247, 255));
-    color: white;
-    border: none;
-    padding: 1.5rem 2rem;
-    font-size: 1.5rem;
-    margin: 2rem 0rem;
-    cursor: pointer;
+  display: inline-block;
+  background: linear-gradient(135deg, #38bdf8, #22c55e);
+  padding: 12px 30px;
+  border-radius: 999px;
+  font-weight: 600;
+  color: #020617;
+  box-shadow: 0 10px 30px rgba(56,189,248,0.35);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.hire-me-btn a {
-    padding: .6rem 1rem;
+.hire-me-btn a{
+  text-decoration: none;
+  color: inherit;
 }
 
 .hire-me-btn:hover {
-    transform: scale(1.09);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(56,189,248,0.5);
+  /* cursor: pointer; */
 }
 
-.my-hero-section-photo {
-    height: 50rem;
-}
-
-.biodata-section {
-    display: flex;
-    flex-direction: row;
-    padding: 3rem;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 3rem;
-    margin-top: 9rem;
-    background-color: rgb(240, 240, 240);
-}
-
-.my-biodata-photo {
-    height: 50rem;
-    box-shadow: -2rem -2rem 0rem #6e572d;
-}
-
-.biodata-heading {
-    font-size: 5rem;
-    font-weight: 600;
-}
-
-.biodata-div {
-    max-width: 70rem;
-}
-
-.skills {
-    margin: 5rem 0rem;
-    font-size: 1.4rem;
-    position: relative;
-}
-
-.skills::after {
-    content: "";
-    position: absolute;
-    bottom: -1rem;
-    left: 0rem;
-    /* top: 1rem; */
-    width: 100%;
-    height: .4rem;
-    border-radius: 1rem;
-    background-color: rgba(198, 194, 194, 0.434);
-}
-
-.progress-bar {
-    position: absolute;
-    bottom: -1rem;
-    left: 0rem;
-    width: 90%;
-    height: .4rem;
-    border-radius: 1rem;
-    background-color: aqua;
-}
-
-.progress-bar-cplusplus {
-    width: 90%;
-}
-
-.progress-bar-html {
-    width: 80%;
-}
-
-.progress-bar-css {
-    width: 84%;
-}
-
-.progress-bar-js {
-    width: 87%;
-}
-
-.progress-bar-mern {
-    width: 97%;
-}
-
-.progress-bar>span {
-    position: absolute;
-    top: 1.4rem;
-    background-color: aqua;
-    display: flex;
-    justify-content: center;
-    left: 97%;
-}
-
-/* 
-.progress-bar-cplusplus span {
-    left: 94%;
-}
-
-.progress-bar-html span {
-    left: 84%;
-}
-
-.progress-bar-css span {
-    left: 87%;
-}
-
-.progress-bar-js span {
-    left: 90%;
-}
-
-.progress-bar-mern span {
-    left: 99%;
-} */
-
-.progress-bar>span::before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    border: 0.7rem solid aqua;
-    border-color: transparent;
-    border-bottom-color: aqua;
-    top: -1.4rem;
-}
-
-.latest-works-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 3rem;
-    margin-top: 5rem;
-}
-
-.project-div {
-    /* background-color: rgba(196, 192, 186, 0.683); */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 29rem;
-    padding: 1rem;
-    border-radius: 1rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.previous-projects {
-    margin: 3rem 0rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem
-}
-
-.project-details {
-    /* display: none; */
-    transition: transform .8s ease-in-out, opacity .8s ease-in-out;
-    transform: translateY(29rem);
-    opacity: 0;
-    position: absolute;
-    margin: auto;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    background-color: rgba(80, 85, 78, 0.68);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1.5rem;
-}
-
-.project-details p {
-    color: white;
-}
-
-.project-details h3 {
-    font-size: 3rem;
-}
-
-.project-div:hover .project-details {
-    transform: translateY(0rem);
-    opacity: 1;
-}
-
-.previous-projects img {
-    height: 22rem;
-}
-
-.see-website-btn {
-    margin: 1rem;
-    padding: 1rem;
-    cursor: pointer;
-    border: none;
-    background: linear-gradient(to right, rgb(33, 196, 196), rgb(46, 214, 186));
-}
-
-.see-website-btn a {
-    color: white;
-}
+/* =========================
+   BIODATA & SKILLS
+========================= */
 
 
+/* =========================
+   PROJECTS SECTION
+========================= */
 
-.resume-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: flex-end;
-    width: 100%;
-    margin-top: 3rem;
-    padding: 8rem 0rem;
-    background-color: rgb(239, 236, 236);
-}
 
-.resume-section-photo {
-    height: 40rem;
-}
+/* =========================
+   RESUME SECTION
+========================= */
 
-.resume-details {
-    display: flex;
-    flex-direction: column;
-    width: 50rem;
-}
 
-.resume-details-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
+/* =========================
+   PARALLAX CTA
+========================= */
 
-.resume-details-container h2 {
-    font-size: 2.5rem;
-    font-weight: lighter;
-    margin: 2rem 0rem 1.4rem 0rem;
-}
 
-.resume-main-data {
-    display: flex;
-    flex-direction: column;
-}
+/* =========================
+   CONTACT FORM
+========================= */
 
-.resume-main-data h4 {
-    font-size: 2rem;
-}
-
-.resume-main-data p {
-    font-size: 1.2rem;
-}
-
-.set-details-proper {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.resume-secondary-data h5 {
-    font-size: 1.4rem;
-    font-weight: lighter;
-    color: rgb(8, 8, 234);
-    border-radius: 1rem;
-    padding: .4rem .7rem;
-
-    background-color: rgb(234, 233, 233);
-}
-
-.resume-secondary-data p {
-    font-size: 1.2rem;
-}
-
-hr {
-    margin: 2rem 0rem;
-    /* color: rgba(128, 128, 128, 0.46); */
-    border-color: rgba(128, 128, 128, 0.125);
-}
-
-.parallax-section {
-    background-image: url("https://getwallpapers.com/wallpaper/full/0/8/1/574978.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    position: relative;
-    background-attachment: fixed;
-    height: 40rem;
-}
-
-.parallax-div {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #3e64ff;
-    opacity: 0.7;
-}
-
-.parallax-container {
-    height: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.parallax-container h3 {
-    color: white;
-    text-shadow: 0.2rem .2rem 0rem black;
-}
-
-.hire-btn-parallax {
-    background: linear-gradient(to right, rgb(165, 165, 215), rgb(89, 89, 246));
-}
-
-.contact-section {
-    padding: 3rem;
-}
-
-.contact-section h3 {
-    margin: 4rem 6rem;
-}
-
-.contact-form-div {
-    width: 60rem;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-}
-
-.input-area-div {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.input-area {
-    border-radius: 1rem;
-    border: 1px solid gray;
-    padding: 1rem;
-    margin: 1rem 0rem;
-    width: 100%;
-    font-size: 1.7rem;
-}
-
-.input-area-div:first-child {
-    margin: 1rem 1rem 1rem 0rem;
-}
-
-.email-input-area {
-    margin: 1rem 0rem 1rem 1rem;
-}
-
-.send-message-btn {
-    background: linear-gradient(to right, rgb(227, 170, 170), rgb(61, 61, 165));
-}
-
+/* =========================
+   FOOTER
+========================= */
 .footer-section {
-    width: 100%;
-    /* height: 30rem; */
-    background-color: rgb(50, 49, 49);
-}
-
-.footer-manager {
-    margin-top: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: lighter;
-}
-
-.footer-manager h2 {
-    margin: 3rem 0rem;
-}
-
-.footer-section h4 {
-    text-align: center;
-    color: white;
-    font-size: 1.6rem;
-    margin: 2rem;
-    font-weight: lighter;
-}
-
-.footer-services-list {
-    font-size: 1.4rem;
-    color: white;
-}
-
-.footer-services-list li {
-    padding: .3rem 0rem;
-    margin: 1rem 0rem;
-}
-
-@media screen and (max-width: 800px) {
-
-    html {
-        font-size: 50%;
-    }
-
-    header {
-        flex-direction: column;
-    }
-
-    .navbar-lists {
-        margin: 3rem 0rem 0rem 0rem;
-        gap: 2rem;
-    }
-
-    .hero-section-intro {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 1rem;
-        text-align: center;
-    }
-
-    .hero-section {
-        flex-direction: column;
-    }
-
-    .my-hero-section-photo {
-        height: 30rem;
-    }
-
-    .my-name {
-        font-size: 4rem;
-    }
-
-    .biodata-section {
-        flex-direction: column-reverse;
-    }
-
-    .my-biodata-photo {
-        height: 30rem;
-    }
-
-    .biodata-div{
-        width: 100%;
-    }
-    .biodata-heading{
-        text-align: center;
-    }
-    .download-resume-btn{
-        display: block;
-        margin: 3rem auto;
-    }
-
-    .biodata-div>p {
-        font-size: 1.5rem;
-        text-align: center;
-    }
-
-    .latest-works-section p {
-        text-align: center;
-    }
-
-    .previous-projects {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .resume-section {
-        flex-direction: column-reverse;
-        align-items: center;
-    }
-
-    .resume-details {
-        margin-bottom: 4rem;
-        width: 90%;
-    }
-
-    .resume-details h3{
-        text-align: center;
-    }
-    .contact-form-div {
-        width: 90%;
-        align-items: center;
-    }
-    .contact-section h3{
-        text-align: center;
-    }
-
-    .footer-manager {
-        flex-direction: column;
-        padding: 3rem;
-    }
-
+  background: #020617;
+  border-top: 1px solid #1f2937;
+  padding: 40px;
+  text-align: center;
+  color: var(--text-muted);
 }

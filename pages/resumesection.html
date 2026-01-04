@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .education {
+            padding: 100px 80px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            background: var(--bg-light);
+        }
+
+        .resume-section-photo {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        .education hr{
+            margin-bottom: 20px;
+        }
+
+        .set-details-proper {
+            border-left: 2px solid #1e293b;
+            padding-left: 21px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .set-details-proper::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background: var(--primary);
+            border-radius: 50%;
+            position: absolute;
+            left: -6px;
+            top: 1px;
+        } */
+
+        /* ===== EDUCATION SECTION ===== */
+.education {
+  padding: 90px 60px;
+  /* display: grid;
+  grid-template-columns: 1fr 1.5fr; */
+  display: flex;
+  flex-direction: column;
+  /* gap: 70px; */
+  align-items: center;
+  /* background: linear-gradient(180deg, #020617, #0f172a); */
+  background: var(--bg-dark);
+}
+
+/* ===== LEFT IMAGE ===== */
+.education img {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 22px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+  justify-self: center;
+}
+
+/* ===== RIGHT CONTENT ===== */
+.education h2 {
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: center;
+}
+
+.resume-details{
+    display: flex;
+    gap: 60px; 
+    flex-direction: row;
+    align-items: center;
+
+}
+
+/* ===== CONTAINER ===== */
+.resume-details-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+/* ===== TIMELINE CARD ===== */
+.set-details-proper {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 25px;
+  padding: 26px 30px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Hover effect */
+.set-details-proper:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 18px 40px rgba(56,189,248,0.25),
+    0 0 26px rgba(34,197,94,0.18);
+}
+
+/* Timeline dot */
+.set-details-proper::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 32px;
+  width: 10px;
+  height: 10px;
+  background: #38bdf8;
+  border-radius: 50%;
+}
+
+/* ===== LEFT PART ===== */
+.resume-main-data h4 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+  color: #e5e7eb;
+}
+
+.resume-main-data p {
+  font-size: 0.95rem;
+  color: #9ca3af;
+  margin-bottom: 6px;
+}
+
+.resume-main-data i, .resume-secondary-data i {
+  margin-right: 8px;
+  color: #38bdf8;
+}
+
+/* ===== RIGHT PART ===== */
+.resume-secondary-data {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.resume-secondary-data h5 {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: #22c55e;
+  margin-bottom: 6px;
+}
+
+.resume-secondary-data p {
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+/* ===== REMOVE HR VISUAL ===== */
+.resume-details-container hr {
+  display: none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .education {
+    grid-template-columns: 1fr;
+    padding: 70px 30px;
+    text-align: center;
+  }
+
+  .education img {
+    display: none;
+    /* max-width: 280px; */
+    /* margin-bottom: 30px; */
+  }
+  .resume-details{
+    gap: 0px;
+  }
+  .set-details-proper {
+    /* grid-template-columns: 1fr; */
+    text-align: left;
+  }
+
+  .resume-secondary-data {
+    text-align: left;
+  }
+
+  .set-details-proper::before {
+    left: 18px;
+    top: -6px;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <section class="education">
+        <h2>Education</h2>
+        <div class="resume-details">
+            <div class="education-image">
+                <img src="./sameep_2.jpeg" alt="Sameep" class="my-biodata-photo resume-section-photo" />
+            </div>
+            <div class="resume-details-container">
+                <div class="set-details-proper">
+                    <div class="resume-main-data">
+                        <h4>Bachelor of Technology</h4>
+                        <p><i class="fa-solid fa-scroll"></i>Computer Science and Engineering</p>
+                        <p><i class="fa-regular fa-building"></i>Madan Mohan Malaviya Universite Of Technology</p>
+                        <p><i class="fa-solid fa-location-dot"></i>Gorakhpur, Uttar Pradesh</p>
+                    </div>
+                    <div class="resume-secondary-data">
+                        <h5>BACHELORS</h5>
+                        <p><i class="fa-regular fa-calendar-days"></i>2020 - 2024</p>
+                    </div>
+                </div>                
+                <div class="set-details-proper">
+                    <div class="resume-main-data">
+                        <h4>Intermediate</h4>
+                        <p><i class="fa-solid fa-scroll"></i>Science with Maths</p>
+                        <p><i class="fa-regular fa-building"></i>Study Well Public School</p>
+                        <p><i class="fa-solid fa-location-dot"></i>Sitapur, Uttar Pradesh</p>
+                    </div>
+                    <div class="resume-secondary-data">
+                        <!-- <h5>BACHELOR</h5> -->
+                        <p><i class="fa-regular fa-calendar-days"></i>2018 - 2019</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="set-details-proper">
+                    <div class="resume-main-data">
+                        <h4>High School</h4>
+                        <p><i class="fa-solid fa-scroll"></i>Central Board for Secondary Education</p>
+                        <p><i class="fa-regular fa-building"></i>Study Well Public School</p>
+                        <p><i class="fa-solid fa-location-dot"></i>Sitapur, Uttar Pradesh</p>
+                    </div>
+                    <div class="resume-secondary-data">
+                        <!-- <h5>BACHELOR</h5> -->
+                        <p><i class="fa-regular fa-calendar-days"></i>2016 - 2017</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

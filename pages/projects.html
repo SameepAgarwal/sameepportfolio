@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .latest-works-section {
+            padding: 100px 80px;
+            }
+
+        .latest-works-section h3 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .previous-projects {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project-div {
+            background: #020617;
+            border-radius: 18px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-div:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.7);
+        }
+
+        .project-div img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .project-div:hover img {
+            transform: scale(1.05);
+        }
+
+        .project-details {
+            padding: 22px;
+            height: 100%;
+            position: relative;
+        }
+
+        .project-details h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-details p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 18px;
+        }
+
+        .see-website-btn {
+            background: none;
+            border: none;
+            position: absolute;
+            bottom: 10px;
+        }
+
+        .see-website-btn a {
+            color: var(--primary);
+            font-weight: 600;
+        } */
+
+        /* ===== PROJECTS SECTION ===== */
+.projects-section {
+  padding: 90px 60px;
+  /* background: radial-gradient(circle at top, #0f172a, #020617); */
+  background: var(--bg-light);
+}
+
+.projects-section > h3 {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 14px;
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.projects-section > p {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ===== GRID ===== */
+.previous-projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+/* ===== PROJECT CARD ===== */
+.project-div {
+  position: relative;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* hover lift */
+.project-div:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 20px 45px rgba(56, 189, 248, 0.25),
+    0 0 30px rgba(34, 197, 94, 0.18);
+}
+
+/* ===== PROJECT IMAGE ===== */
+.project-div img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* image zoom */
+.project-div:hover img {
+  transform: scale(1.06);
+}
+
+/* ===== PROJECT DETAILS ===== */
+.project-details {
+  padding: 22px 24px 26px;
+  position: relative;
+  /* height: max-content; */
+}
+
+.project-details h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #e5e7eb;
+}
+
+.project-details p {
+  font-size: 0.95rem;
+  color: #9ca3af;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+/* ===== BUTTON ===== */
+.see-website-btn {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.see-website-btn a {
+  /* position: relative; */
+  position: absolute;
+  bottom: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  /* color: #38bdf8; */
+  color: transparent;
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  -webkit-background-clip: text;
+  letter-spacing: 0.5px;
+  padding-bottom: 4px;
+  text-decoration: none;
+}
+
+/* underline animation */
+.see-website-btn a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  transition: width 0.3s ease;
+}
+
+.see-website-btn a:hover::after {
+  width: 100%;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 70px 30px;
+  }
+
+  .projects-section > h3 {
+    font-size: 2rem;
+  }
+
+  .previous-projects {
+    gap: 30px;
+  }
+}
+    </style>
+</head>
+<body>
+    <section class="projects-section">
+        <h3>Projects</h3>
+        <p>A collection of projects that showcase my skills in full-stack development, problem-solving, and building scalable, user-focused web applications using modern technologies.</p>
+        <div class="previous-projects">
+            <div class="project-div">
+                <img src="./images/hotstar_clone.png" alt="Hotstar Clone" />
+                <div class="project-details">
+                    <h3>Hotstar Clone</h3>
+                    <p>Hotstar Clone Website with Search Real-time Movies and the Movie Details and similar Movies Suggestion.</p>
+                    <button type="button" class="see-website-btn">
+                        <a href="https://sameephotstarclone.onrender.com" target="_blank">| website |</a>
+                    </button>
+                </div>
+            </div>
+            <div class="project-div">
+                <img src="./images/chat_website.png" alt="Chat Website" />
+                <div class="project-details">
+                    <h3>Chat Website</h3>
+                    <p>
+                        Online Chatting Website with Real-time Messages, send Emojis and also able to start new chat
+                        with Other Users of Website.
+                    </p>
+                    <button type="button" class="see-website-btn">
+                        <a href="https://sameep-chat-website.onrender.com" target="_blank">| website |</a>
+                    </button>
+                </div>
+            </div>
+            <div class="project-div">
+                <img src="./images/task_management.png" alt="Task Management" />
+                <div class="project-details">
+                    <h3>Task Management</h3>
+                    <p>
+                        Task Management Website add any task with title, description and status of task i.e. if task is
+                        completed, In Progress or Not Started.
+                    </p>
+                    <button type="button" class="see-website-btn">
+                        <a href="https://sameeptaskmanagement.netlify.com" target="_blank">
+                            | website |
+                        </a>
+                    </button>
+                </div>
+            </div>
+            <div class="project-div">
+                <img src="./images/calculator.png" alt="Calculator" />
+                <div class="project-details">
+                    <h3>Calculator</h3>
+                    <p>Calculator Website with Add,Subtract, Multiply, Divide like basic funcionality Movies.</p>
+                    <button type="button" class="see-website-btn">
+                        <a href="https://sameepcalculator.netlify.app" target="_blank">| website |</a>
+                    </button>
+                </div>
+            </div>
+            <div class="project-div">
+                <img src="./images/world_tour.png" alt="World Tour" />
+                <div class="project-details">
+                    <h3>World Tour</h3>
+                    <p>
+                        This World Tour Website is Created With the help of HTML, CSS, JS.
+                    </p>
+                    <button type="button" class="see-website-btn">
+                        <a href="https://sameepworldtour.netlify.app" target="_blank">| website |</a>
+                    </button>
+                </div>
+            </div>
+            <div class="project-div">
+                <img src="./images/shifters_plus.png" alt="Shift Your Home" />
+                <div class="project-details">
+                    <h3>Shifters Plus</h3>
+                    <p>Shifters Plus is your helping hand if you are thinking to change your living location or
+                        office location.</p>
+                    <button type="button" class="see-website-btn">
+                        <a href="https://sameepshifterplus.netlify.app" target="_blank">| website |</a>
+                    </button>
+                </div>
+        </div>
+    </section>
+</body>
+</html>

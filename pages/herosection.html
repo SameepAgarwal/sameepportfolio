@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hero-section {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            /* grid-template-columns: 1.2fr 1fr; */
+            align-items: center;
+            padding: 80px;
+            /* background: radial-gradient(circle at top, #1e293b, #020617); */
+            background: var(--bg-dark);
+        }
+
+        .my-name {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #38bdf8, #22c55e);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero-section-intro {
+            /* display: flex; */
+            /* flex-direction: column; */
+            /* justify-content: center; */
+            /* background-color: wheat; */
+            /* width: 100%; */
+            /* align-items: center; */
+            /* margin: 20px; */
+        }
+
+        .hero-section-intro p {
+            margin: 16px 0 28px;
+            color: var(--text-muted);
+            max-width: 500px;
+        }
+
+        .my-hero-section-photo {
+            width: 100%;
+            max-width: 380px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+        }
+        @media (max-width: 1100px) {
+            .my-name{
+                font-size: 3rem;
+            }
+        }
+        @media (max-width: 1000px) {
+            .hero-section {
+                /* grid-template-columns: 1fr; */
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 20px;
+                gap: 40px;
+            }
+            .hero-section-intro p{
+                text-align: left;
+            }
+            .my-name{
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero-section">
+        <div class="hero-section-intro">
+            <h3 class="my-name">Sameep Agarwal</h3>
+            <p>
+                Associate Software Engineer at <strong>Accenture</strong><br>
+                Java Full Stack & MERN Developer
+            </p>
+                <button class="hire-me-btn"><a href="#contact-me" target="_blank">Hire</a></button>
+                <button class="hire-me-btn"><a href="https://drive.google.com/file/d/17Gv_0dED4ZJQxvOQ8Czn8eKGx1aHR4cG/view?usp=drive_link" target="_blank">Resume</a></button>
+        </div>
+        <div>
+            <img src="./sameep.jpeg" alt="Sameep" class="my-hero-section-photo" />
+        </div>
+    </section>
+</body>
+</html>

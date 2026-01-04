@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contact-section {
+            padding: 40px 0px;
+            background: var(--bg-dark);
+            text-align: center;
+        }
+
+        .contact-section h3{
+            font-size: 2.4rem;
+            margin-bottom: 40px;
+            background: linear-gradient(90deg, #38bdf8, #22c55e);
+            -webkit-background-clip: text;
+            color: transparent;
+            text-align: center;
+        }
+
+        .contact-form-div {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .input-area {
+            width: 100%;
+            background: #020617;
+            border: 1px solid #1f2937;
+            border-radius: 15px;
+            padding: 14px;
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .input-area:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        @media (max-width: 900px){
+            .contact-section{
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="contact-section">
+        <h3>Contact Me</h3>
+        <form class="contact-form-div" action="https://formspree.io/f/xknlolgj" method="POST">
+            <div class="input-area-div">
+                <input type="text" name="username" required placeholder="Name" class="input-area" autocomplete="off" />
+                <input type="email" name="email" required placeholder="Email" class="input-area email-input-area"
+                autocomplete="off" />
+            </div>
+            <input type="text" name="subject" required placeholder="Subject" class="input-area" autocomplete="off" />
+            <textarea placeholder="Message" name="textarea" class="input-area" required autocomplete="off"></textarea>
+            <button type="submit" class="hire-me-btn send-message-btn">Send Message</button>
+        </form>
+    </section>
+</body>
+</html>
